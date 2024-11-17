@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap');
+
+  /* General Styling */
+  body, html {
+    font-family: "Heebo", sans-serif;
+    font-optical-sizing: auto;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  #canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #333;
+    padding: 0.5rem;
+    transition: transform 0.2s;
+  }
+
+  nav a:hover {
+    color: #6370fe;
+  }
+
+  .content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    /* padding: 1rem; */
+    color: #333;
+  }
+
+  footer {
+    display: flex;
+    justify-content: end;
+    padding: 1rem 3rem;
+    gap: 1.2rem;
+  }
+
+  .social-links {
+      display: flex;
+      gap: 20px;
+  }
+
+  .social-links a {
+    font-size: 1.5rem;
+    color: #36383D;
+    transition: transform 0.2s;
+  }
+
+  .social-links a:hover {
+    transform: scale(1.2);
+    color: #6370fe;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .content {
+      font-size: 2.25rem;
+      padding: 0.5rem;
+    }
+
+    .social-links a {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+      nav {
+          padding: 0.75rem 1.5rem;
+      }
+      nav img {
+          max-width: 140px;
+      }
+
+      .content {
+          font-size: 2rem;
+      }
+
+      .social-links a {
+          font-size: 1rem;
+      }
+  }
+
+
+/* Blob Animation */
+.animation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+.cloud{
+    width: 300px;
+    height: 300px;
+    opacity: 0.5;
+    animation: cloudAnimation 5s linear 0s infinite normal forwards;
+}
+
+@keyframes cloudAnimation {
+    0% {
+        transform: rotate(0) scale(1);
+    }
+
+    25%{
+        transform: rotate(90deg) scale(1.25);
+    }
+
+    50%{
+        transform: rotate(180deg) scale(1.25);
+    }
+
+    75% {
+        transform: rotate(270deg) scale(1);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+.blob_1 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    filter: blur(20px);
+
+    background-image: linear-gradient(90deg,#86eb7c,#63bcff,#86eb7c,#63bcff);
+    background-blend-mode: multiply;
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s linear infinite;
+}
+
+.blob_2 {
+    position: absolute;
+    right: 0px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    filter: blur(20px);
+
+    background-image: linear-gradient(90deg,#c247ff,#ff6565,#c247ff,#ff6565);
+    background-blend-mode: multiply;
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s linear infinite;
+}
+
+.blob_3 {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    filter: blur(20px);
+    
+    background-image: linear-gradient(90deg,#cd2b2b,#ffef63,#cd2b2b,#ffef63);
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s linear infinite;
+}
+
+.blob_4 {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    filter: blur(20px);
+    
+    background-image: linear-gradient(90deg,#6d4aeb,#fffa96,#6d4aeb,#fffa96);
+    background-blend-mode: multiply;
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s linear infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 100% 0%; }
+    100% { background-position: 0% 0%; }
+}
