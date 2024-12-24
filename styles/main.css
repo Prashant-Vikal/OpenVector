@@ -51,12 +51,35 @@
     flex-grow: 1;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     text-align: center;
     font-size: 3rem;
     font-weight: bold;
     /* padding: 1rem; */
     color: #333;
+  }
+
+  .content a{
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: white;
+    padding: 12px 32px;
+    background: #333;
+    border-radius: 32px;
+    margin-top: 24px;
+
+    transition: all 0.3s ease-out;
+  }
+
+  .content a:hover{
+    background: #6370fe;
+  }
+
+  .content a i{
+    margin-left: 16px;
   }
 
   footer {
